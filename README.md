@@ -1,33 +1,60 @@
-# book_recommendation_system
-Recommendation plays a huge role in boosting the customer/users experience. Book recommendation can help the book lovers to find a perfect book whom they should read next according to their interest or preference.
-Now-a-days, online rating and reviews are playing an important role in books 
-sales. Readers were buying books depend on the reviews and ratings by the others. 
-Recommender system focuses on the reviews and ratings by the others and filters 
-books. In this paper, Hybrid recommender system is used to boost our 
-recommendations. The technique used by recommender systems is Collaborative 
-filtering. This technique filters information by collecting data from other users. 
-Collaborative filtering systems apply the similarity index-based technique. The ratings 
-of those items by the users who have rated both items determine the similarity of the 
-items. The similarity of users is determined by the similarity of the ratings given by 
-the users to an item. Content-based filtering uses the description of the items and gives
-recommendations which are similar to the description of the items. With these two 
-filtering systems, books are recommended not only based on the user’s behaviour but 
-also with the content of the books. So, our recommendation system recommends 
-books to the new users also. In this recommender system, books are recommended 
-based on collaborative filtering technique and similar books are shown using content 
-based filtering.
-The required dataset for the training and testing of our model is downloaded 
-from Good-Reads website. Matrix Factorization technique such as Truncated-SVD 
-which takes sparse matrix of dataset is used for reduction of features. The reduced 
-dataset is used for clustering to build a recommendation system. Clustering is a 
-collaborative filtering technique that is used to build our recommendation system in 
-which data points are grouped into clusters. . In this paper, we used two methods i.e., 
-K-means and Gaussian mixture for clustering the users. The better model is selected 
-based on the silhouette score and used for clustering. Silhouette score or silhouette 
-coefficient is used to calculate how good the clustering is done. Negative value shows 
-that clustering is imperfect whereas positive value shows that clustering was done 
-perfectly. Difference between the mean rating before clustering and after clustering is 
-calculated. Root Mean square Error is used to measure the error between the absolute 
-1
-values and obtained values. That RMSE value is used to find the fundamental 
-accuracy.
+Book Recommendation System
+🧠 Overview
+The Book Recommendation System is a hybrid machine learning model that suggests books based on user preferences and book content. It combines Collaborative Filtering and Content-Based Filtering techniques to provide personalized and accurate recommendations for both new and existing users.
+
+🎯 Objective
+The system aims to enhance the reading experience by:
+Recommending books based on user ratings and preferences.
+Finding similar books using content-based features.
+Utilizing clustering to group similar users for improved recommendations.
+
+🏗️ System Design
+1. Collaborative Filtering
+Identifies users with similar preferences.
+Recommends books liked by users with comparable tastes.
+Uses similarity measures such as cosine similarity or Pearson correlation.
+
+2. Content-Based Filtering
+Recommends books similar to those a user already likes.
+Uses TF-IDF vectorization on book descriptions and cosine similarity to find related titles.
+
+🧩 Methodology
+
+Dataset
+Sourced from Goodreads, containing user ratings, book details, and descriptions.
+
+Preprocessing
+Cleaned data by removing duplicates and missing values.
+Created a user-item rating matrix.
+
+Dimensionality Reduction
+Applied Truncated SVD (Matrix Factorization) to reduce the sparsity of the dataset and extract latent features.
+
+Clustering
+Used K-Means and Gaussian Mixture Models (GMM) to group similar users.
+Evaluated clustering quality using the Silhouette Score.
+The model with the better silhouette score was selected.
+
+Evaluation
+RMSE (Root Mean Square Error): Measures the accuracy of predicted ratings.
+
+Implementation
+🧾 Dependencies
+Install required libraries:
+pip install numpy pandas scikit-learn matplotlib seaborn nltk
+
+🧱 Technologies Used
+Language: Python
+Libraries: NumPy, Pandas, Scikit-learn, NLTK, Matplotlib, Seaborn
+Techniques: Truncated SVD, K-Means, GMM, TF-IDF, Cosine Similarity
+Frontend: HTML & CSS
+Tools: Jupyter Notebook, Flask, PyCharm
+
+🚀 Future Scope
+
+Integrate deep learning-based recommender models.
+Deploy as a web application using Flask or Streamlit.
+Include sentiment analysis on reviews for better recommendations.
+RMSE (Root Mean Square Error): Measures the accuracy of predicted ratings.
+
+Silhouette Score: Evaluates clustering performance.
